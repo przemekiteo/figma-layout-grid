@@ -18,13 +18,14 @@ class MyApp extends StatelessWidget {
       home: LayoutGrid(
         showColumns: GridConfig.showColumnsNotifier,
         showRows: GridConfig.showRowsNotifier,
-        rowsParams: RowsParams(
-          count: 10,
-          height: 12.0,
-          gutter: 12.0,
-          offset: 24.0,
-          arrangement: RowsArragement.bottom,
-          color: const Color(0xFF757975).withOpacity(0.15),
+        rowsParams: const RowsParams(
+          safeAreaBottom: true,
+          safeAreaTop: true,
+        ),
+        columnsParams: const ColumnsParams(
+          safeAreaLeft: true,
+          safeAreaRight: true,
+          safeAreaTop: true,
         ),
         showGrid: GridConfig.showGridNotifier,
         child: const MyHomePage(),

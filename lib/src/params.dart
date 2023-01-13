@@ -25,6 +25,10 @@ class RowsParams {
     this.margin = 0.0,
     this.height = 8.0,
     this.color = _defaultColor,
+    this.safeAreaLeft = false,
+    this.safeAreaRight = false,
+    this.safeAreaTop = false,
+    this.safeAreaBottom = false,
   });
 
   final int? count;
@@ -34,6 +38,10 @@ class RowsParams {
   final double height;
   final double gutter;
   final Color color;
+  final bool safeAreaLeft;
+  final bool safeAreaRight;
+  final bool safeAreaTop;
+  final bool safeAreaBottom;
 }
 
 class ColumnsParams {
@@ -45,6 +53,10 @@ class ColumnsParams {
     this.margin = 0.0,
     this.width = 16.0,
     this.color = _defaultColor,
+    this.safeAreaLeft = false,
+    this.safeAreaRight = false,
+    this.safeAreaTop = false,
+    this.safeAreaBottom = false,
   });
 
   final int? count;
@@ -54,14 +66,26 @@ class ColumnsParams {
   final double width;
   final double gutter;
   final Color color;
+  final bool safeAreaLeft;
+  final bool safeAreaRight;
+  final bool safeAreaTop;
+  final bool safeAreaBottom;
 }
 
 class GridParams {
   const GridParams({
     this.size = 32.0,
     this.color = _defaultColor,
+    this.safeAreaLeft = false,
+    this.safeAreaRight = false,
+    this.safeAreaTop = false,
+    this.safeAreaBottom = false,
   });
 
   final double size;
   final Color color;
+  final bool safeAreaLeft;
+  final bool safeAreaRight;
+  final bool safeAreaTop;
+  final bool safeAreaBottom;
 }

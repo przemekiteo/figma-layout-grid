@@ -122,12 +122,24 @@ And finally to the following UI.
 
 <br>
 
-There is also a possibility to enable ```SafeArea``` for the layout grid. 
+There is also a possibility to enable ```SafeArea``` for a specific layout.
+
+Each of the three layers has ```safeAreaTop```, ```safeAreaBottom```, ```safeAreaLeft```, ```safeAreaRight``` optional parameters which correspond to SafeArea's top, bottom, left and right parameters .
+
+By default SafeArea feature is disabled.
 
 ```dart
 LayoutGrid(
     ...
-    safeArea: true,
+    rowsParams: const RowsParams(
+      safeAreaBottom: true,
+      safeAreaTop: true,
+    ),
+    columnsParams: const ColumnsParams(
+      safeAreaLeft: true,
+      safeAreaRight: true,
+      safeAreaTop: true,
+    ),
     child: const MyHomePage(),
 )
 ```

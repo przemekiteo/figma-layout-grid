@@ -15,7 +15,6 @@ class LayoutGrid extends HookWidget {
     this.columnsParams = const ColumnsParams(),
     this.rowsParams = const RowsParams(),
     this.gridParams = const GridParams(),
-    this.safeArea = false,
   }) : super(key: key);
 
   final ValueNotifier<bool> showRows;
@@ -25,8 +24,6 @@ class LayoutGrid extends HookWidget {
   final ColumnsParams columnsParams;
   final RowsParams rowsParams;
   final GridParams gridParams;
-
-  final bool safeArea;
 
   final Widget child;
 
@@ -42,30 +39,30 @@ class LayoutGrid extends HookWidget {
           child: child,
         ),
         SafeArea(
-          left: safeArea,
-          bottom: safeArea,
-          top: safeArea,
-          right: safeArea,
+          left: rowsParams.safeAreaLeft,
+          bottom: rowsParams.safeAreaBottom,
+          top: rowsParams.safeAreaTop,
+          right: rowsParams.safeAreaRight,
           child: Rows(
             visible: visibleRows,
             params: rowsParams,
           ),
         ),
         SafeArea(
-          left: safeArea,
-          bottom: safeArea,
-          top: safeArea,
-          right: safeArea,
+          left: columnsParams.safeAreaLeft,
+          bottom: columnsParams.safeAreaBottom,
+          top: columnsParams.safeAreaTop,
+          right: columnsParams.safeAreaRight,
           child: Columns(
             visible: visibleColumns,
             params: columnsParams,
           ),
         ),
         SafeArea(
-          left: safeArea,
-          bottom: safeArea,
-          top: safeArea,
-          right: safeArea,
+          left: gridParams.safeAreaLeft,
+          bottom: gridParams.safeAreaBottom,
+          top: gridParams.safeAreaTop,
+          right: gridParams.safeAreaRight,
           child: Grid(
             visible: visibleGrid,
             params: gridParams,
